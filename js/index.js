@@ -40,3 +40,57 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//2a: MVP
+//nav
+{
+  let navLinks = document.querySelector("nav");
+
+  for(let i = 0; i<navLinks.children.length; i++){
+    navLinks.children[i].textContent = siteContent["nav"][`nav-item-${i+1}`];
+  }
+}
+//cta
+{
+  let title = document.querySelector("h1");
+  title.textContent = siteContent["cta"]["h1"];
+
+  let button = document.querySelector("button");
+  button.textContent = siteContent["cta"]["button"];
+
+  let image = document.getElementById("cta-img");
+  image.setAttribute('src', siteContent["cta"]["img-src"]);
+}
+//main content
+{
+  let h4Elem = document.querySelectorAll(".main-content h4");
+  let pElem = document.querySelectorAll(".main-content p");
+
+  let count = 0;
+  for(let k in siteContent["main-content"]){
+    if(k.includes("h4")){
+      h4Elem[count].textContent = siteContent["main-content"][k];
+    }else if(k.includes("content")){
+      pElem[count].textContent = siteContent["main-content"][k];
+      count++
+    }
+  }
+
+  let middleImage = document.getElementById("middle-img");
+  middleImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+}
+//contact
+{
+  let contact = document.querySelector(".contact");
+
+  let count = 0;
+  for(let k in siteContent["contact"]){
+    contact.children[count].textContent = siteContent["contact"][k];
+    count++;
+  }
+}
+//footer
+{
+  let copyright = document.querySelector("footer  p");
+  copyright.textContent = siteContent["footer"]["copyright"];
+}
