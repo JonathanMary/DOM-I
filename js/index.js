@@ -74,7 +74,21 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
   let image = document.getElementById("cta-img");
   image.setAttribute('src', siteContent["cta"]["img-src"]);
+
+  //Task3 stretch , change image color
+  let onOff = 0;
+  button.onclick =  function changeColor(){
+    if(onOff === 0){
+      image.style.filter = "invert(100%)";
+      onOff = 1;
+    }else{
+      image.style.filter = "invert(0%)";
+      onOff = 0;
+    }
+    
+  }
 }
+
 //main content
 {
   let h4Elem = document.querySelectorAll(".main-content h4");
@@ -109,3 +123,5 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
   let copyright = document.querySelector("footer  p");
   copyright.textContent = siteContent["footer"]["copyright"];
 }
+
+
