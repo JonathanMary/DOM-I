@@ -67,7 +67,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 //cta
 {
   let title = document.querySelector("h1");
-  title.textContent = siteContent["cta"]["h1"];
+  title.innerHTML = siteContent["cta"]["h1"].split(" ").join("<br>");
 
   let button = document.querySelector("button");
   button.textContent = siteContent["cta"]["button"];
@@ -102,6 +102,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
     contact.children[count].textContent = siteContent["contact"][k];
     count++;
   }
+  contact.children[1].innerHTML = "123 Way 456 Street <br> Somewhere, USA";
 }
 //footer
 {
